@@ -30,14 +30,14 @@ class Minesweeper:
             print()
 
     def count_mines_nearby(self, x, y):
-    count = 0
-    for dx in [-1, 0, 1]:
-        for dy in [-1, 0, 1]:
-            nx, ny = x + dx, y + dy
-            if 0 <= nx < self.width and 0 <= ny < self.height and (nx, ny) != (x, y):
-                if (ny * self.width + nx) in self.mines:
-                    count += 1
-    return count
+        count = 0
+        for dx in [-1, 0, 1]:
+            for dy in [-1, 0, 1]:
+                nx, ny = x + dx, y + dy
+                if 0 <= nx < self.width and 0 <= ny < self.height and (nx, ny) != (x, y):
+                    if (ny * self.width + nx) in self.mines:
+                        count += 1
+        return count
 
     def reveal(self, x, y):
         if (y * self.width + x) in self.mines:
